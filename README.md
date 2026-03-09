@@ -8,7 +8,7 @@ A full-featured personal expense and income tracker with monthly analytics, cate
 
 ## 📸 Preview
 
-![SpendSmart Preview](assets/preview.png)
+![SpendSmart Preview]()
 
 ## ✨ Features
 
