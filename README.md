@@ -4,7 +4,7 @@ A full-featured personal expense and income tracker with monthly analytics, cate
 
 ## 🚀 Live Demo
 
-[View Live →](https://expense-tracker-shanmuk.vercel.app)
+[View Live →](https://expense-tracker-six-self-77.vercel.app)
 
 ## 📸 Preview
 
