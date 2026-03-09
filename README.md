@@ -8,7 +8,7 @@ A full-featured personal expense and income tracker with monthly analytics, cate
 
 ## 📸 Preview
 
-![SpendSmart Preview]()
+![SpendSmart Preview](https://github.com/shanmukjavvadi/expense-tracker/edit/main/README.md#:~:text=expense-,tracker.png)
 
 ## ✨ Features
 
