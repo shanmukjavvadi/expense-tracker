@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="SpendSmart - Personal expense and income tracker with monthly analytics"/>
+  <title>SpendSmart — Personal Finance Tracker</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="app">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">💸</div>
+      <div>
+        <div class="brand-name">SpendSmart</div>
+        <div class="brand-sub">Finance Tracker</div>
+      </div>
+    </div>
+
+    <div class="balance-section">
+      <div class="bal-label">Net Balance</div>
+      <div class="bal-amount" id="balAmt">₹0</div>
+      <div class="bal-row">
+        <div class="bal-item">
+          <div class="bal-item-label">Income</div>
+          <div class="bal-item-val inc" id="balInc">₹0</div>
+        </div>
+        <div class="bal-item">
+          <div class="bal-item-label">Expenses</div>
+          <div class="bal-item-val exp" id="balExp">₹0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="savings-ring">
+      <svg class="ring-svg" viewBox="0 0 44 44">
+        <circle class="ring-bg" cx="22" cy="22" r="22" transform="scale(.95)" transform-origin="22 22"/>
+        <circle class="ring-fill" id="ringFill" cx="22" cy="22" r="22" transform="scale(.95)" transform-origin="22 22"/>
+      </svg>
+      <div class="ring-label">
+        <div class="ring-pct" id="ringPct">0%</div>
+        <div class="ring-sub">Savings Rate</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="form-title">Add Transaction</div>
+      <div class="type-seg">
+        <button class="t-btn act-exp" id="btnExp" data-type="expense">— Expense</button>
+        <button class="t-btn" id="btnInc" data-type="income">+ Income</button>
+      </div>
+      <input class="f-input" id="fName" placeholder="What was it for?" autocomplete="off"/>
+      <div class="f-row">
+        <input class="f-input" id="fAmt" type="number" placeholder="₹ Amount" min="0"/>
+        <input class="f-input" id="fDate" type="date"/>
+      </div>
+      <div class="cat-grid" id="catGrid"></div>
+      <button class="add-btn" id="addBtn">Add Transaction →</button>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+    <div class="month-nav">
+      <button class="nav-btn" id="prevMonth">←</button>
+      <div class="month-label" id="monthLabel"></div>
+      <button class="nav-btn" id="nextMonth">→</button>
+      <div class="filter-tabs">
+        <button class="ftab act" data-filter="all">All</button>
+        <button class="ftab" data-filter="expense">Expense</button>
+        <button class="ftab" data-filter="income">Income</button>
+      </div>
+    </div>
+
+    <div class="sum-grid">
+      <div class="sum-card" style="--c:var(--green)">
+        <div class="sc-label">💰 Income</div>
+        <div class="sc-val" style="color:var(--green)" id="scInc">₹0</div>
+        <div class="sc-sub" id="scIncSub">0 transactions</div>
+      </div>
+      <div class="sum-card" style="--c:var(--red)">
+        <div class="sc-label">💸 Expenses</div>
+        <div class="sc-val" style="color:var(--red)" id="scExp">₹0</div>
+        <div class="sc-sub" id="scExpSub">0 transactions</div>
+      </div>
+      <div class="sum-card" style="--c:var(--blue)">
+        <div class="sc-label">📊 Avg / Day</div>
+        <div class="sc-val" id="scAvg">₹0</div>
+        <div class="sc-sub" id="scAvgSub">daily spending</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="card-title">6-Month Overview</div>
+      <div class="monthly-chart" id="monthlyChart"></div>
+    </div>
+
+    <div class="breakdown-card">
+      <div class="card-title">Spending Breakdown</div>
+      <div class="cat-rows" id="catRows">
+        <div class="empty-state">No expenses this month.</div>
+      </div>
+    </div>
+
+    <div class="txn-card">
+      <div class="txn-head">
+        <div class="card-title" style="margin:0">Transactions</div>
+        <input class="search-input" id="searchInput" placeholder="Search..."/>
+      </div>
+      <div class="txn-list" id="txnList"></div>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/config.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
